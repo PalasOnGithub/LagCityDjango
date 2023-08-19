@@ -1,0 +1,261 @@
+{% extends 'game/index.html' %}
+{%load static%}
+{%block title%}{{game.name}} - لگ سیتی گیم {%endblock title%}
+        <!-- header end -->
+        <!-- Start breadcumb Area -->
+		{%block content%}
+		<link rel="{%static 'game/js/cim.js' %}">
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>{{game.name}} - لگ سیتی گیم</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>{{game.name}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Stat Game Details Area -->
+        <div class="game-details-page bg-color-2 page-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Start service page -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="single-page">
+							<div class="page-img">
+								<img src="{{game.pic.url}}" alt="">
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="product-content text-left">
+							<h4 class="product-name">
+								<a href="">{{game.name}}</a>
+							</h4>
+							<div class="launch-date">
+								<span>راه اندازی: {{game.create_on|timesince}}</span>
+							</div>
+							<div class="pro-rating no-rating">
+								<span class="rating-rate"> امتیاز: {{game.score}}</span>
+							</div>
+								<p>{{game.short_desc}}</p>
+							<div class="download-btn">
+								{%if "mobile" in game.from_platform.name%}
+								<span class="play-btn"><img src="img/icon/gplay.png" alt=""></span>
+								{%endif%}
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row mar-row">
+					<div class="game-feature">
+						<!-- Start column -->
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="game-system-head single-game">
+								<h4>سیستم عامل بازی</h4>
+								<p>{{game.req|linebreaks}}</p>
+							</div>
+						</div>
+						<!-- Start column -->
+						<div class="col-md-8 col-sm-8 col-xs-12">
+							<div class="single-game-about">
+								{%if game.action_box %}
+								<div class="game-about">
+									<div class="game-icon">
+										<i class="icon icon-database"></i>
+									</div>
+									<div class="game-text">
+										<h4>بازی اکشن</h4>
+										<p>{{game.action_box|linebreaks}}</p>
+									</div>
+								</div>
+								{%endif%}
+								{% if game.effect_box %}
+								<div class="game-about">
+									<div class="game-icon">
+										<i class="icon icon-magic-wand"></i>
+									</div>
+									<div class="game-text">
+										<h4>افکت بصری</h4>
+										<p>{{game.effect_box|linebreaks}}</p>
+									</div>
+								</div>
+								{%endif%}
+								{% if game.online_box %}
+								<div class="game-about">
+									<div class="game-icon">
+										<i class="icon icon-layers"></i>
+									</div>
+									<div class="game-text">
+										<h4>چند نفره</h4>
+										<p>{{game.online_box|linebreaks}}</p>
+									</div>
+								</div>
+								{%endif%}
+								{% if game.animation_box %}
+								<div class="game-about">
+									<div class="game-icon">
+										<i class="icon icon-crop"></i>
+									</div>
+									<div class="game-text">
+										<h4>سیستم انیمیشن</h4>
+										<p>{{game.animation_box|linebreaks}}</p>
+									</div>
+								</div>
+								{%endif%}
+							</div>
+						</div>
+						<!-- End column -->
+					</div>
+                </div>
+                <div class="row mar-row">
+                   <div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="single-game">
+							<h4>سیستم کنترل بازی</h4>
+							<p>{{game.desc}}</p>
+							<ul class="marker-list">
+								<li>{{game.sim_1}}</li>
+								<li>{{game.sim_2}}</li>
+								<li>{{game.sim_3}}</li>
+								<li>{{game.sim_4}}</li>
+								<li>{{game.sim_5}}</li>
+							</ul>
+							<div class="bistscript-bg"> 
+								<div class="tp"> راهنما </div> 
+								<div class="clear"></div> 
+								<div class="txt"> 
+									<h5>{{game.how_to_install}}</h5>
+								</div>
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_1}}"> لينک دانلود مستقيم پارت 1</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_1}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div> 
+								{%if game.download_2%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_2}}"> لينک دانلود مستقيم پارت 2</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_2}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}
+								{%if game.download_3%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_3}}"> لينک دانلود مستقيم پارت 3</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_3}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}
+								{%if game.download_4%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_4}}"> لينک دانلود مستقيم پارت 4</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_4}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}								
+								{%if game.download_5%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_5}}"> لينک دانلود مستقيم پارت 5</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_5}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}								
+								{%if game.download_6%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_6}}"> لينک دانلود مستقيم پارت 6</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_6}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>	
+								{%endif%}							
+								{%if game.download_7%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_7}}"> لينک دانلود مستقيم پارت 7</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_7}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>	
+								{%endif%}							
+								{%if game.download_8%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_8}}"> لينک دانلود مستقيم پارت 8</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_8}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>	
+								{%endif%}							
+								{%if game.download_9%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_9}}"> لينک دانلود مستقيم پارت 9</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_9}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>	
+								{%endif%}							
+								{%if game.download_10%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_10}}"> لينک دانلود مستقيم پارت 10</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_10}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}
+								{%if game.download_11%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_11}}"> لينک دانلود مستقيم پارت 11</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_11}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}
+								{%if game.download_12%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_12}}"> لينک دانلود مستقيم پارت 12</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_12}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}								
+								{%if game.download_13%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_13}}"> لينک دانلود مستقيم پارت 13</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_13}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}								
+								{%if game.download_14%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_14}}"> لينک دانلود مستقيم پارت 14</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_14}}</div> 
+								<div class="btm pass"> رمز فايل : lagcity.ir</div> 
+								<div class="clear"></div>
+								{%endif%}								
+								{%if game.download_15%}
+								<div class="clear"></div>
+								<div class="btm link"><a href="{{game.download_15}}"> لينک دانلود مستقيم پارت 15</a></div> 
+								<div class="btm size"> حجم : {{game.hajm_15}}</div> 
+								<div class="btm pass"> رمز فايل :<button oneclick="myFunction()"> lagcity.ir</button></div> 
+								<div class="clear"></div>
+								{%endif%}
+							</div>
+						</div>
+					</div>
+					<!-- End single page -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="single-page middle-image">
+							<div class="page-img">
+								<img src="{{game.pic.url}}" alt="">
+								<a href="{{game.video.url}}" class="video-play vid-zone">
+								   <i class="fa fa-play"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <!-- End main content -->
+        </div>
+		<!-- End Game Details Area -->
+        <!-- Start Footer bottom Area -->
+		{%endblock content%}

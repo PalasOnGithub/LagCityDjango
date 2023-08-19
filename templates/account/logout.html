@@ -1,0 +1,15 @@
+{%extends 'index.html'%}
+{%load static%}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+<div class="container">
+    <h1>ایا مطمعن هستید میخواهید خارج شوید؟(این کار حساب شما را نابود نخواهد کرد)</h1>
+    <form method="post" action="{% url 'account_logout' %}">
+        {%csrf_token%}
+        {{ form|crispy }}
+        <button class="sign__btn" type="submit">!خروج</button>
+    </form>
+</div>
+{%endblock content%}

@@ -1,0 +1,62 @@
+{% extends 'game/index.html' %}
+{%load static%}
+{%block title %} بلاگ | لگ سیتی گیم{%endblock title%}
+{% block content%}
+        <!-- header end -->
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>وبلاگ لگ سیتی گیم</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>وبلاگ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!--Blog Area Start-->
+        <div class="blog-area bg-color-2 page-padding">
+			<div class="container">
+				<div class="row">
+					<div class="blog-grid">
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div class="blog-right-column">
+							{%for new in news%}
+								<div class="single-blog">
+									<div class="blog-image">
+										<a class="image-scale" href="/game/blog/detail/{{new.id}}">
+											<img src="{{new.picture.url}}" alt="">
+										</a>
+									</div>
+									<div class="blog-content">
+										<div class="blog-meta">
+											<span class="date-type">
+												{{new.create_on|timesince}}
+											</span>
+										</div>
+										<a href="#">
+											<h3>{{new.name}}</h3>
+										</a>
+										<p>{{new.short_desc}}</p>
+									</div>
+								</div>
+							</div>
+							{%endfor%}
+						</div>
+					</div>
+				</div>
+				<!-- End row -->
+			</div>
+		</div>
+		<!--End of Blog Area-->		
+        <!-- Start Footer bottom Area -->
+{%endblock content%}

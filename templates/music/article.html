@@ -1,0 +1,60 @@
+{%extends 'music/index.html' %}
+{%load static%}
+{%block title%}اخبار - {{etc.name}}{%endblock title%}
+	<!-- player -->
+	{%block content%}
+	<!-- end player -->
+
+	<!-- main content -->
+	<main class="main">
+		<div class="container-fluid">
+			<div class="row row--grid">
+				<!-- breadcrumb -->
+				<div class="col-12">
+					<ul class="breadcrumb breadcrumb--hidden-desk">
+						<li class="breadcrumb__item"><a href="/">صفحه اصلی</a></li>
+						<li class="breadcrumb__item breadcrumb__item--active">مقاله</li>
+					</ul>
+				</div>
+				<!-- end breadcrumb -->
+
+				<div class="col-12 col-xl-10 offset-xl-1">
+					<div class="article">
+						<!-- article content -->
+						<div class="article__content">
+							<img src="{{etc.picture.url}}" alt="">
+
+							<div class="article__meta">
+								<a href="#" class="article__category">{{etc.propert_1}}</a>
+
+								<span class="article__date"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10.01114,10.01114,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.00917,8.00917,0,0,1,12,20ZM14.09814,9.63379,13,10.26807V7a1,1,0,0,0-2,0v5a1.00025,1.00025,0,0,0,1.5.86621l2.59814-1.5a1.00016,1.00016,0,1,0-1-1.73242Z"/></svg>{{etc.create_on}}</span>
+							</div>
+
+							<h1>{{etc.short_desc}}</h1>
+
+							<p>_____________________________________________________________________________________________________________________</p>
+
+							<h2>{{etc.name}}</h2>
+
+							<p>{{etc.desc_first}}</p>
+							{%if etc.location_Event%}
+							<blockquote>{{etc.location_Event}}</blockquote>
+							{%endif%}
+							<p>{{etc.end_desc}}</p>
+							<ul>
+								<li>{{etc.propert_2}}</li>
+								<li>{{etc.propert_3}}</li>
+								<li>{{etc.propert_4}}</li>
+							</ul>
+						</div>
+						<!-- end article content -->
+						<!-- share -->
+						<!-- end share -->
+						<!-- end comments -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- end main content -->
+{%endblock content%}

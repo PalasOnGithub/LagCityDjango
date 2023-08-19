@@ -1,0 +1,84 @@
+{%extends 'music/index.html'%}
+{%load static%}
+{%block title%}{{khan.name}}{%endblock title%}
+{%block content%}
+<!-- player -->
+	<div class="player">
+		<div class="player__cover">
+			<img src="{{random_player.picture.url}}" alt="">
+		</div>
+
+		<div class="player__content">
+			<span class="player__track"><b class="player__title">{{random_player.name}}</b> – <span class="player__artist">{{random_player.Track_from.name}}</span></span>
+			<audio src="{{random_player.track_audio}}" id="audio" controls></audio>
+		</div>
+	</div>
+
+	<button class="player__btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.65,2.24a1,1,0,0,0-.8-.23l-13,2A1,1,0,0,0,7,5V15.35A3.45,3.45,0,0,0,5.5,15,3.5,3.5,0,1,0,9,18.5V10.86L20,9.17v4.18A3.45,3.45,0,0,0,18.5,13,3.5,3.5,0,1,0,22,16.5V3A1,1,0,0,0,21.65,2.24ZM5.5,20A1.5,1.5,0,1,1,7,18.5,1.5,1.5,0,0,1,5.5,20Zm13-2A1.5,1.5,0,1,1,20,16.5,1.5,1.5,0,0,1,18.5,18ZM20,7.14,9,8.83v-3L20,4.17Z"/></svg>موزیک پلیر</button>
+	<!-- end player -->
+
+	<!-- main content -->
+	<main class="main">
+		<div class="container-fluid">
+			<div class="row row--grid">
+				<div class="col-12">
+					<div class="article article--page">
+						<!-- article content -->
+						<div class="article__content">
+							<div class="article__artist">
+								<img src="{{khan.picture.url}}" alt="">
+								<div>
+									<h1>{{khan.name}}</h1>
+									<span>{{khan.nick_name}}</span>
+								</div>
+							</div>
+							<p>{{khan.desc}}</p>
+
+							<ul>
+								{%for ahang in ahang_hash%}
+								<a href="/release/{{ahang.id}}"><li>{{ahang.name}}</li></a>
+								{%endfor%}
+							</ul>
+						</div>
+						<!-- end article content -->
+						<!-- share -->
+						<!-- end share -->
+					</div>
+				</div>
+			</div>
+
+			<!-- music videos -->
+			<!-- end music videos -->
+
+			<!-- releases -->
+			<section class="row row--grid">
+				<!-- title -->
+				<div class="col-12">
+					<div class="main__title">
+						<h2>اهنگ های {{khan.name}}</h2>
+					</div>
+				</div>
+				<!-- end title -->
+				{%for ahan in ahang_hash%}
+				<div class="col-6 col-sm-4 col-lg-2">
+					<div class="album">
+						<div class="album__cover">
+							<img src="{{ahan.picture.url}}" alt="">
+							<a href="/release/{{ahan.id}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg></a>
+							<span class="album__stat">
+							</span>
+						</div>
+						<div class="album__title">
+							<h3><a href="/release/{{ahan.id}}">{{ahan.name}}</a></h3>
+							<span><a href="/artist{{khan.id}}">{{khan.name}}</a></span>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+			</section>
+			<!-- end releases -->
+			<!-- end events -->
+		</div>
+	</main>
+	<!-- end main content -->
+{%endblock content%}

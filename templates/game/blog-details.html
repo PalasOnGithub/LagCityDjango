@@ -1,0 +1,163 @@
+{% extends 'game/index.html' %}
+{%load static%}
+{%block title %}بلاگ - {{game.name}}{%endblock title%}
+{% block content%}
+<link rel="{% static 'game/style.css' %}">
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>جزئیات وبلاگ</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>جزئیات وبلاگ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!--Blog Area Start-->
+        <div class="blog-details bg-color-2 page-padding">
+			<div class="container">
+				<div class="row">
+					<div class="blog-details">
+						<!-- Start single blog -->
+						<div class="col-md-8 col-sm-8 col-xs-12">
+						    <!-- single-blog start -->
+							<article class="blog-post-wrapper">
+								<div class="blog-banner">
+									<a href="/game/detail/blog/{{game.id}}" class="blog-images">
+										<img class="test3" src="{{game.picture.url}}" alt="">
+									</a>
+									<div class="blog-content">
+										<div class="blog-meta">
+											<span class="date-type">
+												{{game.create_on|timesince}}
+											</span>
+										</div>
+										<h4>{{game.name}}</h4>
+										<p>{{game.short_desc|linebreaks}}</p>							
+										<p>{{game.desc_first}}</p>
+										<p>{{game.end_desc}}</p>
+									</div>
+								</div>
+							</article>
+							<!-- single-blog end -->
+							<div class="clear"></div>
+							<div class="single-post-comments">
+								<div class="comments-area">
+								    <div class="comments-heading">
+                                        <h3>نظرات : {{comment|length}}</h3>
+                                    </div>
+									<div class="comments-list">
+										<ul>
+											{%for com in comment%}
+											<li class="threaded-comments">
+												<div class="comments-details">
+													<div class="comments-list-img">
+														<img src="{%static 'game/img/blog/avater.jpg' %}" alt="post-author">
+													</div>
+													<div class="comments-content-wrap">
+														<span>
+															<b><a href="#">{{com.name}}</a></b>
+															نویسنده پست
+															<span class="post-time">{{com.create_on|timesince}}</span>
+														</span>
+														<p>{{com.body}}</p>
+													</div>
+												</div>
+											</li>	
+											{%endfor%}							
+										</ul>
+									</div>
+								</div>
+								<div class="comment-respond">
+									<h3 class="comment-reply-title">ارسال یک کامنت</h3>
+									<span class="email-notes">آدرس ایمیل شما منتشر نخواهد شد. زمینه های مورد نیاز مشخص شده اند *</span>
+									<form action="/game/thanks_for_comment" method="post">
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>نام اصلی *</p>
+												<input type="text" name="name" value="name"/>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>نام کاربری *</p>
+												<input type="text" name="username" value="username" />
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>ایمیل *</p>
+												<input type="email" name="email" value="email"/>
+											</div>
+											<input type="hidden" name="ggs" value="{{game.id}}">
+											<div class="col-lg-12 col-md-12 col-sm-12 comment-form-comment">
+												<p>پیام *</p>
+												<textarea id="message-box" cols="30" name="body" rows="10" value="body"></textarea>
+												<input class="add-btn contact-btn" type="submit" value="ارسال نظر" />
+											</div>
+										</div>
+									</form>
+								</div>						
+							</div>
+						</div>
+					</div>
+					<!-- End main column -->
+					<!-- Start single blog -->
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="left-head-blog">
+							<div class="left-blog-page">
+								<!-- search option start -->
+								<!-- search option end -->
+							</div>
+							<div class="left-blog-page">
+								<div class="left-blog">
+									<h4>بازی های جدید</h4>
+									{%for game in last_game%}
+									<ul>
+										<li><a href="/game/detail/{{game.id}}">{{game.name}}</a></li>
+									</ul>
+									{%endfor%}
+								</div>
+							</div>
+							<div class="left-blog-page">
+								<!-- recent start -->
+								<div class="left-blog">
+									<h4>پست های اخیر</h4>
+									<div class="recent-post">
+										<!-- start single post -->
+										{%for new in news%}
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="/game/detail/blog/{{new.id}}">
+													<img class='test4' src="{{new.picture.url}}" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="/game/detail/blog/{{new.id}}">{{new.name}}</a></p>
+												<span class="date-type">
+													{{new.create_on|timesince}}
+												</span>
+											</div>
+										</div>
+										{%endfor%}
+									</div>
+								</div>
+								<!-- recent end -->
+							</div>
+						</div>
+					</div>
+					<!-- End single blog -->
+				</div>
+				<!-- End row -->
+			</div>
+		</div>
+		<!--End of Blog Area-->		
+        <!-- Start Footer bottom Area -->
+		{%endblock content%}

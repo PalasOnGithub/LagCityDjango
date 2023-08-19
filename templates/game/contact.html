@@ -1,0 +1,96 @@
+{% extends 'game/index.html' %}
+{%load static%}
+{%block title %} تماس با ما - لگ سیتی گیم{%endblock title%}
+{% block content%}
+        <!-- header end -->
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>تماس با ما</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>تماس با ما</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Start contact Area -->
+        <div class="contact-area bg-color-2 page-padding">
+            <div class="container">
+                <div class="row contact-page">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="office-city">
+                            <h4>لگ سیتی</h4>
+                            <p>ما همیشه منتظر نظرات شما هستیم!</p>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-phone"></i>
+                                    <p>
+                                        <br>
+                                    <a href="tel:09229390313">تماس</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <p>
+                                        <a href="mailto:mofrad.ghost@gmail.com">ایمیل</a><br>
+                                        <span> وب:<a href="https://lagcity.ir">lagcity.ir</a></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                            </div>
+                        </div>
+                    </div>
+                <!-- End row -->
+                <div class="row">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    </div>
+                    <!-- End contact icon -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="contact-form">
+                            <div class="row">
+                                <form action="/game/thanks_forit" method="post" class="contact-form">
+                                    {% csrf_token %}
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="username" value="username" class="form-control" placeholder="نام" required data-error="لطفا نام خود را وارد کنید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" class="email" name="email" value="email" form-control" id="email" placeholder="ایمیل" required data-error="لطفا آدرس اییمیل خود را وارد نمایید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" id="msg" name="subject" value="subject" class="form-control" placeholder="موضوع" required data-error="لطفا موضوع پیام خود را وارد کنید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <textarea id="message" rows="7" name="text" value="text" placeholder="پیام" class="form-control" required data-error="پیام خود را بنویسید"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-12 col-xl-3">
+                                        <input type="submit" class="add-btn contact-btn" value="ارسال"></input>
+                                    </div>
+                                </form>  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End contact Form -->
+                </div>
+            </div>
+        </div>
+        <!-- End Contact Area -->
+    {%endblock content%}

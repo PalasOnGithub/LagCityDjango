@@ -1,0 +1,482 @@
+
+@media (min-width: 1920px) {
+
+	
+}
+
+/* Normal desktop :1170px. */
+@media (min-width: 1170px) and (max-width: 1349px) {	
+
+	.download-btn {
+    padding: 15px 0px 0px;
+}
+.product-content {
+    padding: 30px 0px 0px 30px;
+}
+.cha-title {
+    font-size: 21px;
+}
+.blog-content a h4 {
+    font-size: 18px;
+}
+	
+	
+	
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {	
+.logo a {
+    display: inline-block;
+    height: auto;
+    padding: 21px 0;
+}
+.header-area.stick .main-menu ul.navbar-nav li a {
+    padding: 28px 0px;
+}
+.product-content {
+    padding: 30px 0px 0px 30px;
+}
+.download-btn {
+    padding: 10px 0px 0px;
+}	
+.cha-title {
+    font-size: 21px;
+}	
+.blog-content a h4 {
+    font-size: 17px;
+}	
+	
+	
+	
+	
+	
+    
+    
+}
+
+
+
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+.header-area .main-menu ul.navbar-nav > li > a {
+    font-size: 12px;
+    margin: 0px 12px;
+    padding: 30px 0px;
+}
+.header-area.stick .main-menu ul.navbar-nav > li > a{
+    font-size: 12px;
+    margin: 0px 12px;
+    padding: 27px 0px;
+}
+.header-area.stick .logo a {
+    padding: 11px 0;
+}
+.logo a {
+    padding: 13px 0;
+}
+.header-right-link a.main-search {
+    padding: 20px 0px 20px 5px;
+}
+.header-area.stick .header-right-link a.main-search {
+    padding: 18px 0px 17px 5px;
+}
+.section-headline h3 {
+    font-size: 30px;
+}
+.layer-1-2 h1 {
+    font-size: 38px;
+    line-height: 46px;
+    max-width: 590px;
+}	
+.layer-1-1 p {
+    max-width: 550px;
+	font-size: 15px;
+}	
+.slider-content {
+    margin-top: -110px;
+}	
+.image-layer img {
+    height: 60px;
+    width: 60px !important;
+}	
+.service-content h4 {
+    font-size: 20px;
+}	
+.product-content {
+    padding: 20px 0px 0px 30px;
+}
+.product-name > a {
+    font-size: 20px;
+}
+.play-btn {
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 8px 15px;
+    width: 50%;
+    float: left;
+    max-width: 140px;
+}
+.rating-rate {
+    display: inline-block;
+    padding: 10px 10px 10px 0px;
+}	
+.download-btn {
+    padding: 0px 0px;
+}
+.tab-menu ul.nav li a {
+    padding: 7px 10px 16px;
+}
+.cha-title {
+    font-size: 15px;
+    line-height: 30px;
+}	
+.blog-content a h4{
+    font-size: 19px;
+}
+.blog-details .blog-content h4{
+    font-size: 20px;
+	line-height: 28px;
+}
+.feature-text h4 {
+    font-size: 16px;
+}
+.about-content h4 {
+    line-height: 28px;
+    font-size: 19px;
+}	
+.about-award h4 {
+    font-size: 18px;
+}	
+.business-faq h4 {
+    font-size: 20px;
+}	
+.single-faq h4 {
+    font-size: 18px;
+    margin: 10px 0px;
+}
+.high-text {
+    font-size: 160px;
+    line-height: 180px;
+}	
+.game-about {
+    padding-right: 20px;
+}
+.blog-search-option input {
+    width: 75%;
+}	
+.post-img {
+    display: none;
+}	
+.pst-content {
+    float: none;
+    width: 100%;
+    padding-left:0px;
+}	
+.comments-content-wrap {
+    margin: 0 0 15px 90px;
+}	
+.game-system-head {
+    padding: 40px 10px;
+}	
+.single-game h4 {
+    font-size: 19px;
+    line-height: 28px;
+}	
+.game-text h4 {
+    font-size: 16px;
+}		
+.cha-img {
+    margin-right: 9px;
+}	
+.single-about {
+    padding: 10px 15px;
+}	
+.business-faq {
+    padding: 40px 20px 25px 20px;
+}	
+.blog-sidebar .blog-right-column .blog-image {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+}
+.left-blog ul li a {
+    font-size: 14px;
+}
+.single-brand-item a {
+    margin: 15px 0px;
+}	
+
+	
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+.container {width:300px}
+.logo {
+    height: inherit;
+    right: 0;
+    padding: 0;
+    position: absolute;
+    top: 4px;
+    z-index: 999999;
+    max-width: 130px;
+}
+.logo a {
+    padding: 0px;
+}
+.pagess::after {
+    display: none;
+}
+.slider-content {
+    margin-top: -80px;
+}
+.intro-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-prev, 
+.intro-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-next,
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-prev, 
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-next,
+.services-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-prev, 
+.services-carousel.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-next{
+	display: none !important;
+}
+.layer-1-2 {
+    margin: 5px 0;
+}
+.layer-1-2 h1 {
+    font-size: 27px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 0px;
+}
+.layer-1-1 p {
+    font-size: 15px;
+    letter-spacing: 0px;
+}
+ .ready-btn.right-btn {
+    margin-left: 5px;
+}   
+.ready-btn {
+    margin-top: 0px;
+    padding: 10px 0px;
+    width: 128px;
+	font-size: 12px;
+}    
+.intro-area {
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    margin-top: 0px;
+}
+.intro-content,
+.slider-images img{
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+}
+.section-headline h3 {
+    font-size: 30px;
+    line-height: 36px;
+}
+.section-headline p {
+    max-width: 300px;
+}
+.service-content h4,
+.product-name > a{
+    font-size: 22px;
+}
+.product-content {
+    padding: 30px 0px 0px 0px;
+}	
+.play-btn {
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 6px 12px;
+}
+.single-product {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.project-content .project-single{
+	width: 100%;
+}
+.project-menu li a {
+    margin: 0px 4px 30px 4px;
+}
+.tab-menu ul.nav li a{
+   padding: 7px 10px 16px;
+}	
+.title-date {
+    margin-top: 20px;
+}	
+.cha-title {
+    font-size: 16px;
+    line-height: 30px;
+}	
+.blog-content a h4 {
+    font-size: 16px;
+}	
+.blog-right-column .blog-image {
+    overflow: hidden;
+    float: none;
+    width: auto;
+    margin-right: 0px;
+}	
+.footer-content {
+    margin-bottom: 50px;
+}	
+.about-feature {
+    margin-top: -30px;
+}	
+.single-about {
+    margin-top: 60px;
+}	
+.about-content h4 {
+    line-height: 28px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.about-award h4 {
+    font-size: 18px;
+}
+.award-img a {
+    padding-right: 10px;
+}
+	
+.high-text {
+    font-size: 112px;
+    line-height: 150px;
+}	
+.error-easy-text {
+    font-size: 24px;
+}	
+.error-bot {
+    font-size: 18px;
+}	
+li.threaded-comments {
+    margin-left: 0px;
+}		
+.left-head-blog {
+    margin-top: 60px;
+}	
+.blog-search-option input {
+    width: 75%;
+}	
+.game-details-page .product-content {
+    padding: 30px 0px 0px;
+}
+.single-game h4 {
+    font-size: 20px;
+    line-height: 28px;
+}	
+.game-system-head {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}	
+.game-about {
+    width: 100%;
+    float: none;
+    margin-top: 30px;
+	padding-right: 0px;
+}
+.mar-row .single-game {
+    margin-bottom: 30px;
+}
+.office-city {
+    padding: 40px 10px 20px;
+	margin-bottom: 20px;
+}
+.single-icon i {
+    margin-right: 10px;
+}
+.map-area {
+    margin-bottom: 50px;
+}
+.cha-img {
+    display: none;
+}
+.title-date {
+    margin-top: 0px;
+	top:0;
+}
+.tab-content {
+    margin-top: 20px;
+}
+.project-menu {
+    margin-bottom: 10px;
+    margin: 0px 30px;
+}
+.comments-content-wrap {
+    margin: 0 0 15px 85px;
+}	
+.single-brand-item a {
+    margin: 15px 0px;
+}	
+.slider-images,
+.slider-images img{
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+}
+	
+	
+	
+	
+	
+	
+    
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+.layer-1-2 h1 {
+    font-size: 24px;
+    line-height: 32px;
+}
+.intro-area-4 .layer-1-2 h1 {
+    font-size: 24px;
+    line-height: 32px;
+}
+ .service-content h4 {
+    font-size: 26px;
+} 
+.breadcrumb .section-headline h3 {
+    font-size: 34px;
+}	
+.container-full .section-headline p {
+    max-width: 360px;
+}	
+.about-name .video-play.vid-zone {
+    margin-top: 0px;
+}	
+.project-single {
+    float: left;
+    width: 50% !important;
+}
+.single-client {
+    float: left;
+    width: 50%;
+}
+.blog-content a h4 {
+    font-size: 20px;
+}	
+.intro-content,
+.slider-images img{
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+}	
+	
+	
+	
+	
+	
+	
+	
+    
+}
+ 

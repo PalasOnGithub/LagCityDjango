@@ -1,0 +1,115 @@
+{% extends 'game/index.html' %}
+{%load static%}
+{%block title %} بازی ها | لگ سیتی گیم {%endblock title%}
+{% block content%}
+        <!-- header end -->
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>بازی های ما</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>بازی های ما - لگ سیتی گیم</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Welcome service area start -->
+        <div class="services-area bg-color-2 page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="services-carousel">
+						{%for game in all_game%}
+                    	<!-- single-well end-->
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="single-services text-center">
+								<div class="services-img">
+									<img class="test" src="{{game.pic.url}}" alt="">
+								</div>
+								<div class="main-services">
+									<div class="service-content">
+										<h4>{{game.name}}</h4>
+										<p>{{game.create_on|timesince}}</p>
+										<a class="service-btn" href="/game/detail/{{game.id}}">دانلود | download</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome service area End -->
+        <!-- Start Product Area -->
+        <div class="product-area bg-color-1 area-padding">
+            <div class="container">
+               <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>تازه ها در لگ سیتی</h3>
+							<p>شما میتوانید بازی های جدید لگ سیتی را از این قسمت مشاهده کنید</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="best-product">
+                        <!-- Start single product -->
+						{% for game in all_game%}
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="single-product">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="product">
+										<div class="product-img">
+										    <span class="category">{{game.from_platform.name}}</span>
+											<img class="first-img testm" src="{{game.pic.url}}" alt="">
+										</div>
+                                    </div>
+                                </div>
+								<p></p>
+                                <!-- Start product content -->
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+									<div class="product-content text-center">
+										<h4 class="product-name">
+											<a href="/game/detail/{{game.id}}">{{game.name}}</a>
+										</h4>
+										<div class="launch-date">
+											<span>راه اندازی: {{game.create_on|timesince}} ago</span>
+										</div>
+										<div class="pro-rating no-rating">
+										    <span class="rating-rate"> امتیاز: {{game.score}}</span>
+										</div>
+										{%if "mobile" in game.from_platform.name%}
+										<div class="download-btn">
+											<span class="play-btn"><a href="https://lagcity.ir"><img src="{% static 'game/img/icon/gplay.png' %}" </a></span>
+										</div>
+										{%endif%}
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					{%endfor%}
+                        <!-- End single product -->
+                        <!-- Start single product -->
+                        <!-- End single product -->
+                        <!-- Start single product -->
+                        <!-- End single product -->
+                        <!-- Start single product -->
+                        <!-- End single product -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Product Area -->
+        <!-- Start Footer bottom Area -->
+ {%endblock content%}

@@ -1,0 +1,125 @@
+{% extends 'music/index.html' %}
+{%block title%}{%for sth in playing%}{{sth.list_name}}{%endfor%}{%endblock title%}
+{%block content%}
+	<!-- player -->
+	<div class="player">
+		<div class="player__cover">
+			<img src="{{ran.picture.url}}" alt="">
+		</div>
+
+		<div class="player__content">
+			<span class="player__track"><b class="player__title">{{ran.name}}</b> – <span class="player__artist">{{ran.Track_from.name}}</span></span>
+			<audio src="{{ran.track_audio.url}}" id="audio" controls></audio>
+		</div>
+	</div>
+
+	<button class="player__btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.65,2.24a1,1,0,0,0-.8-.23l-13,2A1,1,0,0,0,7,5V15.35A3.45,3.45,0,0,0,5.5,15,3.5,3.5,0,1,0,9,18.5V10.86L20,9.17v4.18A3.45,3.45,0,0,0,18.5,13,3.5,3.5,0,1,0,22,16.5V3A1,1,0,0,0,21.65,2.24ZM5.5,20A1.5,1.5,0,1,1,7,18.5,1.5,1.5,0,0,1,5.5,20Zm13-2A1.5,1.5,0,1,1,20,16.5,1.5,1.5,0,0,1,18.5,18ZM20,7.14,9,8.83v-3L20,4.17Z"/></svg>موزیک پلیر</button>
+	<!-- end player -->
+
+	<!-- main content -->
+	<main class="main">
+		<div class="container-fluid">
+			<div dir="rtl" class="row row--grid">
+				<!-- breadcrumb -->
+				<div class="col-12">
+					<ul class="breadcrumb">
+						<li class="breadcrumb__item"><a href="/">صفحه اصلی</a></li>
+						<li class="breadcrumb__item breadcrumb__item--active">{% for sth in playing%}{{sth.list_name}}{%endfor%}</li>
+					</ul>
+				</div>
+				<!-- end breadcrumb -->
+
+				<!-- title -->
+				<div class="col-12">
+					<div class="main__title main__title--page">
+						<h1>{%for sth in playing%} {{sth.list_name}} {%endfor%} - لگ سیتی  </h1>
+					</div>
+				</div>
+				<!-- end title -->
+
+				<div class="col-12">
+					<div class="release">
+						<div class="release__content">
+							<div class="release__cover">
+								{%for me in playing%}
+								<img src="{{me.picture.url}}" alt="">
+								{%endfor%}							
+							</div>
+
+							<a class="release__buy open-modal">{%for you in playing%}{{you.list_name}}{%endfor%}</a>
+						</div>
+
+						<div class="release__list">
+							<ul class="main__list main__list--playlist main__list--dashbox">
+								{%for sth in play%}
+								<li class="single-item">
+									<a data-playlist data-title="{{sth.name}}" data-artist="{{sth.Track_from.name}}" data-img="{{sth.picture.url}}" href="{{sth.track_audio.url}}" class="single-item__cover">
+										<img src="{{sth.picture.url}}" alt="">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
+									</a>
+									<div class="single-item__title">
+										<h4>{{sth.name}}</h4>
+										<span><a href="/artist/{{sth.Track_from.id}}">{{sth.Track_from.name}}</a></span>
+									</div>
+									<a href="{{sth.track_audio.url}}" class="single-item__export">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,1,0-1.42,1.42Z"></path></svg>
+									</a>
+									<span class="single-item__time">{{sth.Time}}</span>
+									{%endfor%}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-8">
+					<div class="article">
+						<!-- article content -->
+						<div class="article__content">
+							<h4>توضیحات {%for sth in playing%}{{sth.list_name}}{%endfor%}</h4>
+
+							<p>{%for sth in playing%}{{sth.desc}}{%endfor%}</p>
+						</div>
+						<!-- end article content -->
+
+						<!-- share -->
+						<!-- end share -->
+					</div>
+				</div>
+
+				<div dir="ltr" class="col-12 col-lg-4">
+					<!-- releases -->
+					<div class="row row--sidebar">
+						<!-- title -->
+						<div class="col-12">
+							<div class="main__title main__title--sidebar">
+								<h3>دیگر منتشر شده ها</h3>
+							</div>
+						</div>
+						<!-- end title -->
+						{%for lo in lot%}
+						<div class="col-6 col-sm-4 col-lg-6">
+							<div class="album album--sidebar">
+								<div class="album__cover">
+									<img src="{{lo.picture.url}}" alt="">
+									<a href="/release/{{lo.id}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg></a>
+									<span class="album__stat">
+										<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,13.18V11A8,8,0,0,0,4,11v2.18A3,3,0,0,0,2,16v2a3,3,0,0,0,3,3H8a1,1,0,0,0,1-1V14a1,1,0,0,0-1-1H6V11a6,6,0,0,1,12,0v2H16a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h3a3,3,0,0,0,3-3V16A3,3,0,0,0,20,13.18ZM7,15v4H5a1,1,0,0,1-1-1V16a1,1,0,0,1,1-1Zm13,3a1,1,0,0,1-1,1H17V15h2a1,1,0,0,1,1,1Z"/></svg>{{lo.Time}}</span>
+									</span>
+								</div>
+								<div class="album__title">
+									<h3><a href="/release/{{lo.id}}">{{lo.name}}</a></h3>
+									<span><a href="/artist/{{lo.Track_from.id}}">{{lo.Track_from.name}}</a></span>
+								</div>
+							</div>
+						</div>
+						{%endfor%}
+					</div>
+					<!-- end releases -->
+				</div>	
+			</div>
+		</div>
+	</main>
+	<!-- end main content -->
+{%endblock content%}
