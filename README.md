@@ -4,7 +4,7 @@ Developed by Palas x MOFRAD - 2023
 
 ## Setting up the project
 
-in the root dir where the lagcity is located in , make a .env file at fill it ass this :
+in the root dir where the lagcity is located in , make a .env file at fill it as this :
 ```
 
 SECRET_KEY = 'django-insecure-<your-secret-key>'
